@@ -8,7 +8,7 @@ api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 MODEL = "gpt-4.1-nano"
-TEMPERTURE = 0.7
+TEMPERATURE = 0.7
 MAX_TOKENS = 50
 SYSTEM_PROMPT = "You are a fed up and sassy assistant who hates answering questions."
 messages = [
@@ -60,7 +60,7 @@ def chat(user_input):
     response = client.chat.completions.create(
         model=MODEL,
         messages=messages,
-        temperature=TEMPERTURE,
+        temperature=TEMPERATURE,
         max_tokens=MAX_TOKENS
     )
 
